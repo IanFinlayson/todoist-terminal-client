@@ -1,4 +1,8 @@
 #!/bin/bash
 
+# must change this to the path you have it installed in
+cd /home/ifinlay/Projects/todoist-terminal-client
+
+# launch the program
 racket -f interface.rkt
 
