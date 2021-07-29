@@ -1,7 +1,11 @@
 ; rest.rkt
 ; functions to interact with the Todoist REST API
 
-(require net/url)
+; functions provided by this file
+#lang racket
+(provide get-projects)
+
+; must be installed with raco
 (require net/http-easy)
 
 ; this URL is used for all of the Todoist API calls

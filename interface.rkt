@@ -2,8 +2,7 @@
 ; provides a command-line interface for users to
 ; interact with their projects and tasks
 
-(require racket/include)
-(include "rest.rkt")
+(require "rest.rkt")
 
 ; loads the token from the token.txt file
 ; this is needed to authenticate REST calls with Todoist
@@ -12,7 +11,8 @@
     (string-append "Bearer " (symbol->string (read file)))))
 
 
-
-(get-projects (load-token))
-
+(begin
+  (displayln "Before")
+  (get-projects (load-token))
+  (displayln "After"))
 
