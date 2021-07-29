@@ -5,6 +5,14 @@
 (require racket/include)
 (include "rest.rkt")
 
-(get-projects "123")
+; loads the token from the token.txt file
+; this is needed to authenticate REST calls with Todoist
+(define (load-token)
+  (let ([file (open-input-file "token.txt")])
+    (string-append "Bearer " (symbol->string (read file)))))
+
+
+
+(get-projects (load-token))
 
 
