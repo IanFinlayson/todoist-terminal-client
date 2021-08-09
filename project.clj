@@ -4,7 +4,7 @@
   :license {:name "MIT License"
             :url "https://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.10.1"]]
-  :main ^:skip-aot todoist-terminal-client.core
+  :main ^:skip-aot todoist-terminal-client.interface
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
                        :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})
