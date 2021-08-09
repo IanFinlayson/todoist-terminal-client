@@ -6,3 +6,5 @@
   [& args]
   (println "Hello, World!"))
 
+(defn hi [] (println "HI"))
+
