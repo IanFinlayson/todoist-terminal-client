@@ -7,25 +7,26 @@
 
 ; the default settings written to the file
 (def default-settings
-  {:select-color "blue"
-   :sort "normal"
+  {:sort "normal"
+   :select-color "blue"
   })
 
 (defn dump-default-settings
-  "Writes the default settings (given token and default list) to file"
+  "Writes the default settings (given token and default list) to config file"
   [token default-list]
   (let [full-default-settings
         (conj {:token token :default-list default-list} default-settings)]
     (with-open [outfile (clojure.java.io/writer (config-file-name))]
+      (.write outfile "; settings file for todoist terminal client\n{\n")
       (doseq [setting full-default-settings]
-        (.write outfile (str setting "\n"))))))
+        (.write outfile
+                (str "  " (first setting) " \"" (second setting) "\"\n")))
+      (.write outfile "}\n"))))
 
 
-
-
-    
-    
-    ;(spit (config-file-name) full-default-settings)))
-  
+; from https://squirrel.pl/blog/2012/10/01/configuration-files-in-clojure/
+;(defn load-config [filename]
+  ;(with-open [r (io/reader filename)]
+    ;(read (java.io.PushbackReader. r))))
 
 
