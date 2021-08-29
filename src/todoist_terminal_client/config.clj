@@ -24,6 +24,9 @@
       (.write outfile "}\n"))))
 
 
+; TODO
+(defn get-token [] "123456")
+
 ; from https://squirrel.pl/blog/2012/10/01/configuration-files-in-clojure/
 ;(defn load-config [filename]
   ;(with-open [r (io/reader filename)]
